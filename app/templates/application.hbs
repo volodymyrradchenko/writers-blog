@@ -1,7 +1,9 @@
-<header class="page-header">
-  <a class="page-header__logo">
-    <img class="page-header__logo-image" src="assets/images/logo-1.svg" width="110" height="44" alt="Writer's logo">
-  </a>
+<div class="page">
+  <header class="page-header">
+    <a class="page-header__logo">
+      <img class="page-header__logo-image" src="/assets/images/logo-1.svg" width="107" height="40" alt="Writer's logo">
+    </a>
+  </header>
   <nav class="main-nav">
     <ul class="main-nav__list site-list">
       <li class="site-list__item site-list__item--active"><a href="#">Home</a></li>
@@ -9,31 +11,32 @@
       <li class="site-list__item"><a href="#">About</a></li>
     </ul>
   </nav>
-</header>
-<main class="page-main">
-  <section class="posts">
-    {{outlet}}
-  </section>
-</main>
-<footer class="page-footer">
-  <div class="page-footer__wrapper">
-    <div class="page-footer__social social">
-      <ul class="social__list">
-        <li class="social__item">
-          <a href="" class="social__link social__link--facebook">Facebook</a>
-        </li>
-        <li class="social__item">
-          <a href="" class="social__link social__link--twitter">Twitter</a>
-        </li>
-        <li class="social__item">
-          <a href="" class="social__link social__link--instagram">Instagram</a></li>
-      </ul>
+  <main class="page-main">
+    <section class="posts">
+      <h2 class="visually-hidden">Posts list</h2>
+      {{outlet}}
+    </section>
+  </main>
+  <footer class="page-footer">
+    <div class="page-footer__wrapper">
+      <div class="page-footer__social social">
+        <ul class="social__list">
+          <li class="social__item">
+            <a href="" class="social__link social__link--facebook">Facebook</a>
+          </li>
+          <li class="social__item">
+            <a href="" class="social__link social__link--twitter">Twitter</a>
+          </li>
+          <li class="social__item">
+            <a href="" class="social__link social__link--instagram">Instagram</a></li>
+        </ul>
+      </div>
+      <div class="page-footer__copyright copyright">
+        <b class="copyright__text visually-hidden">Created by</b>
+        <a class="copyright__link" href="https://github.com/volodymyrradchenko/writers-blog">
+          <img class="copyright__logo-image" src="/assets/images/logo-2.svg" width="105" height="36" alt="Blog's logo">
+        </a>
+      </div>
     </div>
-    <div class="page-footer__copyright copyright">
-      <b class="copyright__text visually-hidden">Created by</b>
-      <a class="copyright__link" href="https://github.com/volodymyrradchenko/writers-blog">
-        <img class="copyright__logo-image" src="assets/images/logo-2.svg" width="110" height="44" alt="Blog's logo">
-      </a>
-    </div>
-  </div>
-</footer>
+  </footer>
+</div>
