@@ -55,7 +55,7 @@ a {
 
 @media (min-width: 768px) {
   .ember-application {
-    grid-template-columns: 110px 1fr;
+    grid-template-columns: 130px 1fr;
     grid-template-areas: "header nav" "main main" "footer footer";
   }
 }
@@ -64,20 +64,37 @@ a {
 
 .page-header {
   grid-area: header;
-  padding: 0 20px;
+  padding: 5px 20px;
 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: auto;
   background-color: #ffffff;
 }
 
-.page-header .page-header__logo {
-  display: block;
+.page-header__sign-in .sign-in__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
 
+.page-header__logo .logo__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Navigation */
 
 .main-nav {
   grid-area: nav;
+
+  position: sticky;
+  top: 0;
 
   font-size: 18px;
   line-height: 22px;
@@ -97,29 +114,27 @@ a {
   padding: 0 0;
 }
 
-
 .site-list__item a {
-display: block;
-background-color: #ffffff;
+  display: block;
+  background-color: #ffffff;
 
-padding: 5px 10px;
+  padding: 5px 10px;
 }
 
 .site-list {
-list-style: none;
+  list-style: none;
 }
 
 .site-list__item a {
-color: #000000
+  color: #000000
 }
 
 .site-list__item a:hover,
-.site-list__item a:focus {
-color: #333333;
-}
-
+.site-list__item a:focus,
 .site-list__item a:active {
-border-bottom: 2px solid #000000;
+  color: #333333;
+  outline: none;
+  border-bottom: 2px solid #000000;
 }
 
 /* Content */
@@ -152,11 +167,10 @@ border-bottom: 2px solid #000000;
   margin: 0 0 10px 0;
 }
 
-
 .posts__item {
-background-color: #ffffff;
+  background-color: #ffffff;
 
-margin: 12px auto;
+  margin: 12px auto;
 }
 
 .posts__item figure {
@@ -275,13 +289,12 @@ margin: 12px auto;
   content: '\00A9';
 }
 
-
 .visually-hidden {
   position: absolute !important;
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
-  padding:0 !important;
-  border:0 !important;
+  padding: 0 !important;
+  border: 0 !important;
   height: 1px !important;
   width: 1px !important;
   overflow: hidden;
