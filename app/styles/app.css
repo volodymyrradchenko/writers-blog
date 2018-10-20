@@ -1,3 +1,5 @@
+@import "pod-styles.css";
+
 @font-face {
   font-family: 'PT Sans';
   font-style: normal;
@@ -49,78 +51,21 @@ a {
 .page {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-areas: "header" "nav" "main" "footer";
+  grid-template-areas: "header" "main" "footer";
 
 }
 
 @media (min-width: 768px) {
-  .page {
-    grid-template-columns: 110px 1fr;
-    grid-template-areas: "header nav" "main main" "footer footer";
-  }
+
 }
 
 /* Header */
 
-.page-header {
-  grid-area: header;
-  padding: 0 20px;
 
-  background-color: #ffffff;
-}
-
-.page-header .page-header__logo {
-  display: block;
-
-}
 
 /* Navigation */
 
-.main-nav {
-  grid-area: nav;
 
-  font-size: 18px;
-  line-height: 22px;
-  color: #000000;
-  text-transform: uppercase;
-
-  background-color: #ffffff;
-}
-
-.main-nav__list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-
-  margin: 0 auto;
-  padding: 0 0;
-}
-
-
-.site-list__item a {
-display: block;
-background-color: #ffffff;
-
-padding: 5px 10px;
-}
-
-.site-list {
-list-style: none;
-}
-
-.site-list__item a {
-color: #000000
-}
-
-.site-list__item a:hover,
-.site-list__item a:focus {
-color: #333333;
-}
-
-.site-list__item a:active {
-border-bottom: 2px solid #000000;
-}
 
 /* Content */
 

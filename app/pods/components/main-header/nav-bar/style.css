@@ -1,0 +1,45 @@
+.main-nav {
+  grid-area: nav-bar;
+
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+  text-transform: uppercase;
+
+  background-color: #ffffff;
+}
+
+.main-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 auto;
+  padding: 0 0;
+}
+
+
+.site-list__item a {
+  display: block;
+  background-color: #ffffff;
+
+  padding: 5px 10px;
+}
+
+.site-list {
+  list-style: none;
+}
+
+.site-list__item a {
+  color: #000000
+}
+
+.site-list__item a:hover,
+.site-list__item a:focus {
+  color: #333333;
+}
+
+.site-list__item a:active {
+  border-bottom: 2px solid #000000;
+}

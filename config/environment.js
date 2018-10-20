@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'writers-blog',
+    podModulePrefix: 'writers-blog/pods',
     environment,
     rootURL: '/',
     locationType: 'auto',

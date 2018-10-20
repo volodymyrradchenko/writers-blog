@@ -1,18 +1,9 @@
 <div class="page">
-  <header class="page-header">
-    <div class="page-header__logo">
-      <a>
-        <img class="page-header__logo-image" src="/assets/images/logo-1.svg" width="110" height="40" alt="Writer's logo">
-      </a>
-    </div>
-  </header>
-  <nav class="main-nav">
-    <ul class="main-nav__list site-list">
-      <li class="site-list__item site-list__item--active"><a href="#">Home</a></li>
-      <li class="site-list__item"><a href="#">Posts</a></li>
-      <li class="site-list__item"><a href="#">About</a></li>
-    </ul>
-  </nav>
+  {{#main-header as |header|}}
+    {{header.headBar}}
+    {{header.navBar}}
+  {{/main-header}}
+
   <main class="page-main">
     <section class="posts">
       <h2 class="visually-hidden">Posts list</h2>

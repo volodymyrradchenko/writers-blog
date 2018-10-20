@@ -1,0 +1,11 @@
+.page-header {
+  grid-area: header;
+  padding: 0 20px;
+
+  background-color: #ffffff;
+}
+
+.page-header .page-header__logo {
+  display: block;
+
+}
