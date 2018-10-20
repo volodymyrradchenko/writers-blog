@@ -46,7 +46,7 @@ a {
   text-decoration: none;
 }
 
-.page {
+.ember-application {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas: "header" "nav" "main" "footer";
@@ -54,7 +54,7 @@ a {
 }
 
 @media (min-width: 768px) {
-  .page {
+  .ember-application {
     grid-template-columns: 110px 1fr;
     grid-template-areas: "header nav" "main main" "footer footer";
   }
