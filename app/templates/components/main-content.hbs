@@ -1,0 +1,18 @@
+<section class="posts">
+  <h2 class="visually-hidden">Posts list</h2>
+  <div class="posts__wrapper infinite-scroll">
+    <ul class="posts__list infinite-scroll__list">
+      {{#each @model as |post|}}
+        <PostCard @imgUrl={{post.imgUrl}}
+                  @imgAlt={{post.imgAlt}}
+                  @imgCapt={{post.imgCapt}}
+                  @category={{post.category}}
+                  @title={{post.title}}
+        />
+      {{/each}}
+    </ul>
+    <div class="posts__button">
+      <button class="button infinite-scroll__show-more">More</button>
+    </div>
+  </div>
+</section>

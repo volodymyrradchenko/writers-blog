@@ -1,68 +1,70 @@
-<section class="posts">
-  <h2 class="visually-hidden">Posts list</h2>
-  <div class="posts__wrapper infinite-scroll">
-    <ul class="posts__list infinite-scroll__list">
-      <li class="posts__item infinite-scroll__item">
-        <figure class="posts__image">
-          <img src="/assets/images/writer-1.jpg"
-               alt="Portraits Of Charles Bukowski (Photo by JARNOUX Patrick/Paris Match via Getty Images)">
-          <figcaption class="visually-hidden">Portrait of Charles Bukowski</figcaption>
-        </figure>
-        <div class="posts__content">
-          <div class="posts__category visually-hidden">Sci-Fi</div>
-          <h3 class="posts__title">Bukowski’s poems were mangled by editors after his death. Now you can read his
-            originals</h3>
-          <div class="posts__footer">
-          <span class="posts__date">
-            <time datetime="2018-09-23">Oct 5</time>
-          </span>
-            <span class="posts__divider"></span>
-            <span class="posts__duration">10 min read</span>
-          </div>
-        </div>
-      </li>
+<MainContent @model={{this.model}} />
 
-      <li class="posts__item infinite-scroll__item">
-        <figure class="posts__image">
-          <img src="/assets/images/writer-2.jpg" alt="Dante Alighieri">
-        </figure>
-        <div class="posts__content">
-          <div class="posts__category visually-hidden">Fiction</div>
-          <h3 class="posts__title">Dante's goal was 'to remove those living in this life from the state of misery and
-            lead
-            them to the state of bliss</h3>
-          <div class="posts__footer">
-          <span class="posts__date">
-            <time datetime="2018-09-23">Sep 23</time>
-          </span>
-            <span class="posts__divider"></span>
-            <span class="posts__duration">6 min read</span>
-          </div>
-        </div>
-      </li>
+<!--<section class="posts">-->
+  <!--<h2 class="visually-hidden">Posts list</h2>-->
+  <!--<div class="posts__wrapper infinite-scroll">-->
+    <!--<ul class="posts__list infinite-scroll__list">-->
+      <!--<li class="posts__item infinite-scroll__item">-->
+        <!--<figure class="posts__image">-->
+          <!--<img src="/assets/images/writer-1.jpg"-->
+               <!--alt="Portraits Of Charles Bukowski (Photo by JARNOUX Patrick/Paris Match via Getty Images)">-->
+          <!--<figcaption class="visually-hidden">Portrait of Charles Bukowski</figcaption>-->
+        <!--</figure>-->
+        <!--<div class="posts__content">-->
+          <!--<div class="posts__category visually-hidden">Sci-Fi</div>-->
+          <!--<h3 class="posts__title">Bukowski’s poems were mangled by editors after his death. Now you can read his-->
+            <!--originals</h3>-->
+          <!--<div class="posts__footer">-->
+          <!--<span class="posts__date">-->
+            <!--<time datetime="2018-09-23">Oct 5</time>-->
+          <!--</span>-->
+            <!--<span class="posts__divider"></span>-->
+            <!--<span class="posts__duration">10 min read</span>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</li>-->
 
-      <li class="posts__item infinite-scroll__item">
-        <figure class="posts__image">
-          <img src="/assets/images/writer-3.jpg" alt="Fyodor Dostoevsky">
-        </figure>
-        <div class="posts__content">
-          <div class="posts__category visually-hidden">Essay</div>
-          <h3 class="posts__title">How Dostoevsky predicted Trump’s America</h3>
-          <div class="posts__footer">
-          <span class="posts__date">
-            <time datetime="2018-09-15">Sep 15</time>
-          </span>
-            <span class="posts__divider"></span>
-            <span class="posts__duration">8 min read</span>
-          </div>
-        </div>
-      </li>
+      <!--<li class="posts__item infinite-scroll__item">-->
+        <!--<figure class="posts__image">-->
+          <!--<img src="/assets/images/writer-2.jpg" alt="Dante Alighieri">-->
+        <!--</figure>-->
+        <!--<div class="posts__content">-->
+          <!--<div class="posts__category visually-hidden">Fiction</div>-->
+          <!--<h3 class="posts__title">Dante's goal was 'to remove those living in this life from the state of misery and-->
+            <!--lead-->
+            <!--them to the state of bliss</h3>-->
+          <!--<div class="posts__footer">-->
+          <!--<span class="posts__date">-->
+            <!--<time datetime="2018-09-23">Sep 23</time>-->
+          <!--</span>-->
+            <!--<span class="posts__divider"></span>-->
+            <!--<span class="posts__duration">6 min read</span>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</li>-->
 
-    </ul>
-    <div class="posts__button">
-      <button class="button infinite-scroll__show-more">More</button>
-    </div>
-  </div>
-</section>
+      <!--<li class="posts__item infinite-scroll__item">-->
+        <!--<figure class="posts__image">-->
+          <!--<img src="/assets/images/writer-3.jpg" alt="Fyodor Dostoevsky">-->
+        <!--</figure>-->
+        <!--<div class="posts__content">-->
+          <!--<div class="posts__category visually-hidden">Essay</div>-->
+          <!--<h3 class="posts__title">How Dostoevsky predicted Trump’s America</h3>-->
+          <!--<div class="posts__footer">-->
+          <!--<span class="posts__date">-->
+            <!--<time datetime="2018-09-15">Sep 15</time>-->
+          <!--</span>-->
+            <!--<span class="posts__divider"></span>-->
+            <!--<span class="posts__duration">8 min read</span>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</li>-->
+
+    <!--</ul>-->
+    <!--<div class="posts__button">-->
+      <!--<button class="button infinite-scroll__show-more">More</button>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</section>-->
 
 {{outlet}}
