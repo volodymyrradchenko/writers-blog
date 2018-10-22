@@ -1,18 +1,16 @@
-<li class="posts__item infinite-scroll__item">
-  <figure class="posts__image">
-    <img src={{@imgUrl}}
-         alt={{@imgAlt}}>
-    <figcaption class="visually-hidden">{{@imgCapt}}</figcaption>
-  </figure>
-  <div class="posts__content">
-    <div class="posts__category visually-hidden">{{@category}}</div>
-    <h3 class="posts__title">{{@title}}</h3>
-    <div class="posts__footer">
+<figure class="posts__image">
+  <img src={{@imgUrl}}
+       alt={{@imgAlt}}>
+  <figcaption class="visually-hidden">{{@imgCapt}}</figcaption>
+</figure>
+<div class="posts__content">
+  <div class="posts__category visually-hidden">{{@category}}</div>
+  <h3 class="posts__title">{{@title}}</h3>
+  <div class="posts__footer">
           <span class="posts__date">
             <time datetime={{this.dateTime}}>{{this.dateTimeShow}}</time>
           </span>
-      <span class="posts__divider"></span>
-      <span class="posts__duration">{{this.readingTime}}</span>
-    </div>
+    <span class="posts__divider"></span>
+    <span class="posts__duration">{{this.readingTime}}</span>
   </div>
-</li>
+</div>
