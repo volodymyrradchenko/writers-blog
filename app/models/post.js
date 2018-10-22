@@ -7,7 +7,11 @@ export default DS.Model.extend({
   imgAlt: DS.attr('string'),
   imgCaption: DS.attr('string'),
   category: DS.attr('string'),
-  timestamp: DS.attr('date'),
-  comments: DS.hasMany('comment'),
-  user: DS.belongsTo('user')
+  timestamp: DS.attr('date', {
+    defaultValue() {
+      return new Date();
+    }
+  }),
+  comments: DS.hasMany('comment', { async: true, inverse: null }),
+  user: DS.belongsTo('user', { async: true, inverse: null })
 });

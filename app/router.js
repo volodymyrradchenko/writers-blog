@@ -9,6 +9,7 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route('posts', function() {
     this.route('new');
+    this.route('edit', { path: '/:post_id/edit' });
   });
   this.route('about');
   this.route('sign-in');
