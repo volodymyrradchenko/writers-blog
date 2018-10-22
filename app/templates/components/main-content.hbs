@@ -3,7 +3,8 @@
   <div class="posts__wrapper infinite-scroll">
     <ul class="posts__list infinite-scroll__list">
       {{#each @model as |post|}}
-        <PostCard @imgUrl={{post.imgUrl}}
+        <PostCard @model={{this.model}}
+                  @imgUrl={{post.imgUrl}}
                   @imgAlt={{post.imgAlt}}
                   @imgCapt={{post.imgCapt}}
                   @category={{post.category}}
