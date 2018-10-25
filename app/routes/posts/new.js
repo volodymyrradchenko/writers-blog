@@ -7,7 +7,24 @@ export default Route.extend({
 
   actions: {
     savePost(newPost) {
-      newPost.save().then(() => this.transitionTo('posts'))
+      console.log('---', this.get('session.currentUser.uid'));
+      console.log('---', this.get('title'));
+      console.log('---', this.get('store'));
+
+      const currentUserId = this.get('session.currentUser.uid');
+      const post = this.get('store').createRecord('post', {
+        title: newPost.title,
+        body: newPost.body,
+        imgUrl: newPost.imgUrl,
+        imgAlt: newPost.imgAlt,
+        imgCaption: newPost.imgCaption,
+        category: newPost.category,
+        uid: currentUserId,
+      });
+
+      post.save().then(() => this.get('store').unloadAll());
+      // console.log('---', newPost.get('title'));
+      // newPost.save().then(() => this.transitionTo('posts'))
     }
   }
 });

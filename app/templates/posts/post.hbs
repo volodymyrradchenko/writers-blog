@@ -1,0 +1,21 @@
+<article class="posts__item infinite-scroll__item">
+  <div class="posts__content">
+    <div class="posts__category visually-hidden">{{model.category}}</div>
+    <h3 class="posts__title">{{model.title}}</h3>
+    <div class="posts__footer">
+      <span class="posts__date">
+            <time datetime={{this.dateTime}}>{{this.dateTimeShow}}</time>
+          </span>
+      <span class="posts__divider"></span>
+      <span class="posts__duration">{{this.readingTime}}</span>
+    </div>
+  </div>
+  <figure class="posts__image">
+    <img src={{model.imgUrl}}
+         alt={{model.imgAlt}}>
+    <figcaption class="visually-hidden">{{model.imgCapt}}</figcaption>
+  </figure>
+  <div>
+    {{model.body}}
+  </div>
+</article>

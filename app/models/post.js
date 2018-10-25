@@ -12,6 +12,6 @@ export default DS.Model.extend({
       return new Date();
     }
   }),
+  uid: DS.attr('string'),
   comments: DS.hasMany('comment', { async: true, inverse: null }),
-  user: DS.belongsTo('user', { async: true, inverse: null })
 });
