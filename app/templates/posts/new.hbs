@@ -3,6 +3,7 @@
     {{input type="text" value=model.title placeholder='Title'}}
   </div>
   <div>
+    {{pell-editor value=model.body onChange=(action (mut model.body))}}
     {{textarea type="text" value=model.body placeholder='Body'}}
   </div>
   <div>
