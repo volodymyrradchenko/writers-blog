@@ -1,2 +1,13 @@
 <div>{{comment.body}}</div>
-{{yield}}
+{{#if showForm}}
+  <form {{action replyComment replyMessage on="submit"}}>
+    {{input type="text" value=replyMessage}}
+    <button type="submit" name="button">Reply</button>
+  </form>
+{{else}}
+  <button type="button" name="button" {{action set 'showForm' true}}>Reply</button>
+{{/if}}
+
+{{#each comment.comments as |childComment|}}
+  <PostComment @comment={{childComment}} />
+{{/each}}
