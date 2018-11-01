@@ -1,39 +1,45 @@
 <article class="post__item">
   <div class="post__header">
-    <div class="post__category visually-hidden">{{model.post.category}}</div>
-    <h3 class="post__title">{{model.post.title}}</h3>
+    <div class="post__category visually-hidden">{{model.category}}</div>
+    <h3 class="post__title">{{model.title}}</h3>
     <div class="post__info">
       <span class="post__date">
-            <time datetime={{this.dateTime}}>{{this.dateTimeShow}}</time>
-          </span>
+        <time datetime={{this.dateTime}}>{{this.dateTimeShow}}</time>
+      </span>
       <span class="post__divider"></span>
       <span class="post__duration">{{this.readingTime}}</span>
     </div>
   </div>
   <figure class="post__image">
-    <img src={{model.post.imgUrl}}
-         alt={{model.post.imgAlt}}>
-    <figcaption class="post__image-caption">{{model.post.imgCapt}}</figcaption>
+    <img src={{model.imgUrl}} alt={{model.imgAlt}}>
+    <figcaption class="post__image-caption">{{model.imgCapt}}</figcaption>
   </figure>
   <div class="post__body">
-    {{{model.post.body}}}
+    {{{model.body}}}
   </div>
 </article>
 <section class="post__comments">
-<h1>Comments go here</h1>
-{{#if model.post.comments}}
-  {{#each model.post.comments as |comment|}}
-    <PostComment @comment={{comment}} />
-  {{/each}}
-{{else}}
-  <h2>No comments yet</h2>
-{{/if}}
-<div>
-  <div>
-    {{input type="text" value=commmentMessage placeholder='Your comment'}}
+  <h1>Comments go here</h1>
+  <div class="post-comment__wrapper">
+    {{#if model.comments}}
+      {{#each model.comments as |comment|}}
+        <PostComment @comment={{comment}} @showReply=true />
+      {{/each}}
+    {{else}}
+      <h2>No comments yet</h2>
+    {{/if}}
   </div>
-  <div>
-    <button type="submit" {{action 'saveComment' commmentMessage}}>Save new comment</button>
+  <div class="post-comment__reply-form--wrapper">
+    <div class="post-comment__reply-form">
+    <form>
+      <div class="reply-form__text-input">
+        {{!-- TODO: create a component for reply-form  --}}
+        {{textarea type="text" value=commentMessage placeholder="Leave your comment here..."}}
+      </div>
+      <div class="reply-form__submit-button">
+        <button type="submit" name="button" {{action 'saveComment' commentMessage}}>Reply</button>
+      </div>
+    </form>
   </div>
-</div>
+  </div>
 </section>

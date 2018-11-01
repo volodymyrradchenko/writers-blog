@@ -1,28 +1,28 @@
 import Component from '@ember/component';
-import { inject as service } from "@ember/service";
-import { get } from "@ember/object";
+import { inject as service } from '@ember/service';
+import { get, set } from '@ember/object';
 
 export default Component.extend({
   store: service(),
   session: service(),
 
   async replyComment(replyMessage) {
-    const newComment = this.get('store').createRecord('comment', {
-      uid: this.get('session.currentUser.uid'),
+    const newComment = get(this, 'store').createRecord('comment', {
+      uid: get(this, 'session.currentUser.uid'),
       body: replyMessage
-    })
+    });
 
-    const currentComment = this.get('comment')
+    const currentComment = get(this, 'comment');
 
     try {
-      await newComment.save()
+      await newComment.save();
 
-      get(currentComment, 'comments').pushObject(newComment)
+      get(currentComment, 'comments').pushObject(newComment);
 
-      await currentComment.save()
+      await currentComment.save();
 
-      this.set('showForm', false)
-      this.set('replyMessage', '')
+      set(this, 'showForm', false);
+      set(this, 'replyMessage', '')
     } catch(e) {
       console.log(e)
     }

@@ -1,40 +1,37 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
-import { debug } from '@ember/debug';
-
-import RSVP from 'rsvp';
+import { get, set } from '@ember/object';
 
 export default Route.extend({
   store: service(),
   session: service(),
 
   model( { post_id } = {} ) {
-    return RSVP.hash({
-      post: this.store.findRecord('post', post_id),
-    });
+      return this.store.findRecord('post', post_id);
   },
 
   actions: {
-    async saveComment(commmentMessage = '') {
-      let currentPost = this.get('currentModel.post');
+    async saveComment(commentMessage = '') {
+      let currentPost = this.modelFor('posts.post');
 
-      const newComment = this.store.createRecord('comment', {
-        uid: this.session.get('currentUser.uid'),
-        body: commmentMessage
-      })
+      let newComment = this.store.createRecord('comment', {
+        uid: get(this, 'session.currentUser.uid'),
+        body: commentMessage
+      });
 
-      currentPost.get('comments').pushObject(newComment);
+      get(currentPost, 'comments').pushObject(newComment);
 
       try {
-        await newComment.save()
-        await currentPost.save()
+        await newComment.save();
+        await currentPost.save();
       } catch(e) {
         console.log(e)
       }
 
-      this.controllerFor('posts.post').set('commmentMessage', '')
+      // reset commentMessage after saving it
+      set(this.controllerFor('posts.post'), 'commentMessage', '');
 
-      this.refresh()
+      this.refresh();
     }
   }
 });

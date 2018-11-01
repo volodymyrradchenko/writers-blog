@@ -1,17 +1,17 @@
-<figure class="post-card__image">
-  <img src={{model.imgUrl}}
-       alt={{model.imgAlt}}>
-  <figcaption class="visually-hidden">{{model.imgCapt}}</figcaption>
-</figure>
-<div class="post-card__content">
-  <div class="post-card__category visually-hidden">{{model.category}}</div>
-  <h3 class="post-card__title">{{model.title}}</h3>
-  <div class="post-card__footer">
-          <span class="post-card__date">
-            <time datetime={{this.dateTime}}>{{this.dateTimeShow}}</time>
-          </span>
-    <span class="post-card__divider"></span>
-    <span class="post-card__duration">{{this.readingTime}}</span>
+{{#link-to 'posts.post' model.id}}
+  <figure class="post-card__image">
+    <img src={{model.imgUrl}} alt={{model.imgAlt}}>
+    <figcaption class="visually-hidden">{{model.imgCapt}}</figcaption>
+  </figure>
+  <div class="post-card__content">
+    <div class="post-card__category visually-hidden">{{model.category}}</div>
+    <h3 class="post-card__title">{{model.title}}</h3>
+    <div class="post-card__footer">
+      <span class="post-card__date">
+        <time datetime={{this.dateTime}}>{{this.dateTimeShow}}</time>
+      </span>
+      <span class="post-card__divider"></span>
+      <span class="post-card__duration">{{this.readingTime}}</span>
+    </div>
   </div>
-  {{#link-to 'posts.post' model.id}}Show{{/link-to}}
-</div>
+{{/link-to}}

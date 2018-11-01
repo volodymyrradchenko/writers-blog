@@ -44,6 +44,7 @@ html {
 
 a {
   text-decoration: none;
+  outline: none;
 }
 
 .ember-application {
@@ -112,13 +113,16 @@ a {
 
   margin: 0 auto;
   padding: 0 0;
+  border-bottom: 1px solid rgba(142, 142, 142, 0.2);
+
 }
 
 .site-list__item a {
   display: block;
   background-color: #ffffff;
 
-  padding: 5px 10px;
+  padding: 3px 10px;
+  border-bottom: 2px solid transparent;
 }
 
 .site-list {
@@ -130,10 +134,8 @@ a {
 }
 
 .site-list__item a:hover,
-.site-list__item a:focus,
 .site-list__item a:active {
   color: #333333;
-  outline: none;
   border-bottom: 2px solid #000000;
 }
 
@@ -167,6 +169,7 @@ a {
 
 .post-card__item {
   background-color: #ffffff;
+  border-bottom: 1px solid rgba(142, 142, 142, 0.2);
 
   margin: 12px auto;
 }
@@ -182,11 +185,15 @@ a {
   margin: 0;
 }
 
+.post-card__item a {
+  color: inherit;
+}
+
 .post-card__footer {
   font-family: Arial, sans-serif;
   font-weight: bold;
 
-  color: gray;
+  color: #8e8e8e;
 }
 
 .post-card__footer time {
@@ -232,6 +239,7 @@ a {
 
 .post__item {
   background-color: #ffffff;
+  border-bottom: 1px solid rgba(142, 142, 142, 0.2);
 
   margin: 12px auto;
 }
@@ -250,7 +258,7 @@ a {
 font-family: Arial, sans-serif;
 font-weight: bold;
 
-color: gray;
+color: #8e8e8e;
 }
 
 .post__info time {
@@ -289,6 +297,97 @@ margin: 0;
 }
 
 
+/* post comments */
+
+.post-comment__wrapper {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.post-comment__item {
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(142, 142, 142, 0.2);
+  padding: 12px 20px;
+  padding-left: 30px;
+
+  margin: 12px auto;
+}
+
+.post-comment__body {
+}
+
+.post-comment__reply-form--wrapper {
+  margin: 24px 30px;
+}
+
+.post-comment__reply-form {
+  background-color: #ffffff;
+}
+
+.post-comment__reply-form form {
+  border: 1px solid #8e8e8e;
+  border-radius: 5px;
+}
+
+.reply-form__text-input {
+  margin: 8px;
+}
+
+.reply-form__text-input textarea {
+  width: 100%;
+  min-height: 122px;
+
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+  overflow-wrap: break-word;
+
+  outline: none;
+  border: none;
+  resize: none;
+}
+
+.post-comment__inline-button {
+  display: inline-block;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  padding-left: 22px;
+  font-weight: bold;
+
+  position: relative;
+
+  color: #8e8e8e;
+}
+
+.post-comment__inline-button:hover {
+  text-decoration: underline;
+}
+
+.inline-button__divider::before {
+  content: '';
+
+  display: inline;
+  position: absolute;
+
+  /* TODO: fix 'top: 0' begaviour: it's different depending on the browser (https://github.com/kimroen/ember-cli-autoprefixer) */
+  top: 0;
+  right: 38px;
+
+  width: 15px;
+  height: 15px;
+
+  background-image: url("/assets/images/iconmonstr-speech-bubble-17.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-color: transparent;
+}
+
+.post-comment__child-comments {
+
+}
 
 
 /* Footer */
