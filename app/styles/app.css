@@ -316,36 +316,9 @@ margin: 0;
 .post-comment__body {
 }
 
-.post-comment__reply-form--wrapper {
+.reply-form__wrapper {
   margin: 24px 30px;
-}
-
-.post-comment__reply-form {
   background-color: #ffffff;
-}
-
-.post-comment__reply-form form {
-  border: 1px solid #8e8e8e;
-  border-radius: 5px;
-}
-
-.reply-form__text-input {
-  margin: 8px;
-}
-
-.reply-form__text-input textarea {
-  width: 100%;
-  min-height: 122px;
-
-  margin: 0;
-  padding: 0;
-
-  overflow: hidden;
-  overflow-wrap: break-word;
-
-  outline: none;
-  border: none;
-  resize: none;
 }
 
 .post-comment__inline-button {
@@ -387,6 +360,29 @@ margin: 0;
 
 .post-comment__child-comments {
 
+}
+
+/* comment-form component */
+
+.reply-form {
+  border: 1px solid #8e8e8e;
+  border-radius: 5px;
+}
+
+.reply-form__text-input {
+margin: 8px;
+}
+
+.reply-form__text-input textarea {
+width: 100%;
+min-height: 122px;
+margin: 0;
+padding: 0;
+overflow: hidden;
+overflow-wrap: break-word;
+outline: none;
+border: none;
+resize: none;
 }
 
 

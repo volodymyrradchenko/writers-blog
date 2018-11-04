@@ -7,21 +7,13 @@
     {{comment.body}}
   </div>
   {{#if @showReply}}
-    <div class="post-comment__reply-form">
-      {{!-- TODO: create a toggle showForm function in component --}}
+    <div class="post-comment__footer">
       <button class="post-comment__inline-button" type="button" name="button" {{action set 'showForm' true}}><span class="inline-button__divider"></span>Reply</button>
-      {{#if showForm}}
-        <form {{action replyComment replyMessage on="submit"}}>
-          <div class="reply-form__text-input">
-            {{!-- TODO: add functionality to expand textarea height https://github.com/jackmoore/autosize  --}}
-            {{textarea type="text" value=replyMessage placeholder="Leave your comment here..."}}
-          </div>
-          <div class="reply-form__submit-button">
-            <button type="submit" name="button">Reply</button>
-          </div>
-        </form>
-      {{/if}}
     </div>
+    {{#if showForm}}
+      {{!-- TODO: create a toggle showForm function in component --}}
+      <CommentForm @comment={{comment}} />
+    {{/if}}
     <div class="post-comment__child-comments">
       {{#each comment.comments as |childComment|}}
         <PostComment @comment={{childComment}} />

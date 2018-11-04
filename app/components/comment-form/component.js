@@ -8,24 +8,22 @@ export default Component.extend({
 
   tagName: '',
 
-  async replyComment(replyMessage) {
-    const newComment = get(this, 'store').createRecord('comment', {
+  async saveComment(commentMessage = '') {
+    let newComment = this.store.createRecord('comment', {
       uid: get(this, 'session.currentUser.uid'),
-      body: replyMessage
+      body: commentMessage
     });
 
-    const currentComment = get(this, 'comment');
+    let currentParent = this.comment;
+    get(currentParent, 'comments').pushObject(newComment);
 
     try {
       await newComment.save();
-
-      get(currentComment, 'comments').pushObject(newComment);
-
-      await currentComment.save();
+      await currentParent.save();
 
       set(this, 'showForm', false);
-      set(this, 'replyMessage', '')
-    } catch(e) {
+      set(this, 'commentMessage', '')
+    } catch (e) {
       console.log(e)
     }
   }

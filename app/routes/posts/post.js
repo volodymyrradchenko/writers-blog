@@ -6,32 +6,32 @@ export default Route.extend({
   store: service(),
   session: service(),
 
-  model( { post_id } = {} ) {
-      return this.store.findRecord('post', post_id);
+  model({ post_id } = {}) {
+    return this.store.findRecord('post', post_id);
   },
+actions: {
+  async saveComment(commentMessage = '') {
+    let newComment = this.store.createRecord('comment', {
+      uid: get(this, 'session.currentUser.uid'),
+      body: commentMessage
+    });
 
-  actions: {
-    async saveComment(commentMessage = '') {
-      let currentPost = this.modelFor('posts.post');
+    let currentPost = this.modelFor('posts.post');
 
-      let newComment = this.store.createRecord('comment', {
-        uid: get(this, 'session.currentUser.uid'),
-        body: commentMessage
-      });
 
-      get(currentPost, 'comments').pushObject(newComment);
+    get(currentPost, 'comments').pushObject(newComment);
 
-      try {
-        await newComment.save();
-        await currentPost.save();
-      } catch(e) {
-        console.log(e)
-      }
-
-      // reset commentMessage after saving it
-      set(this.controllerFor('posts.post'), 'commentMessage', '');
-
-      this.refresh();
+    try {
+      await newComment.save();
+      await currentPost.save();
+    } catch (e) {
+      console.log(e)
     }
+
+    // reset commentMessage after saving it
+    set(this.controllerFor('posts.post'), 'commentMessage', '');
+
+    this.refresh();
   }
+}
 });

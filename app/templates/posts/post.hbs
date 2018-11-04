@@ -29,17 +29,7 @@
       <h2>No comments yet</h2>
     {{/if}}
   </div>
-  <div class="post-comment__reply-form--wrapper">
-    <div class="post-comment__reply-form">
-    <form>
-      <div class="reply-form__text-input">
-        {{!-- TODO: create a component for reply-form  --}}
-        {{textarea type="text" value=commentMessage placeholder="Leave your comment here..."}}
-      </div>
-      <div class="reply-form__submit-button">
-        <button type="submit" name="button" {{action 'saveComment' commentMessage}}>Reply</button>
-      </div>
-    </form>
-  </div>
+  <div class="reply-form__wrapper">
+    <CommentForm @comment={{model}} />
   </div>
 </section>
