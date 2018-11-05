@@ -23,13 +23,13 @@
   <div class="post-comment__wrapper">
     {{#if model.comments}}
       {{#each model.comments as |comment|}}
-        <PostComment @comment={{comment}} @showReply=true />
+        {{post-comment comment=comment showReply=true }}
       {{/each}}
     {{else}}
       <h2>No comments yet</h2>
     {{/if}}
   </div>
   <div class="reply-form__wrapper">
-    <CommentForm @comment={{model}} />
+    {{comment-form comment=model}}
   </div>
 </section>

@@ -7,8 +7,14 @@ export default Component.extend({
   session: service(),
 
   tagName: '',
+  showForm: false,
+
+  toggleForm() {
+    this.toggleProperty('showForm');
+  },
 
   async replyComment(replyMessage) {
+
     const newComment = get(this, 'store').createRecord('comment', {
       uid: get(this, 'session.currentUser.uid'),
       body: replyMessage
@@ -22,9 +28,10 @@ export default Component.extend({
       get(currentComment, 'comments').pushObject(newComment);
 
       await currentComment.save();
-
+// TODO: fix toggle off after comment is saved
+      set(this, 'replyMessage', '');
       set(this, 'showForm', false);
-      set(this, 'replyMessage', '')
+
     } catch(e) {
       console.log(e)
     }

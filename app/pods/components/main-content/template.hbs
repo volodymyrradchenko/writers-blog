@@ -1,8 +1,7 @@
 <h2 class="visually-hidden">Posts list</h2>
 <div class="post-card__wrapper infinite-scroll">
   {{#each model as |post|}}
-    <PostCard @model={{post}}
-    />
+    {{post-card model=post }}
   {{/each}}
 </div>
 <div class="post-card__button">

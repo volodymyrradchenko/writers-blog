@@ -6,17 +6,16 @@
   <div class="post-comment__body">
     {{comment.body}}
   </div>
-  {{#if @showReply}}
+  {{#if showReply}}
     <div class="post-comment__footer">
-      <button class="post-comment__inline-button" type="button" name="button" {{action set 'showForm' true}}><span class="inline-button__divider"></span>Reply</button>
+      <button class="post-comment__inline-button" type="button" name="button" {{action toggleForm}}><span class="inline-button__divider"></span>Reply</button>
     </div>
     {{#if showForm}}
-      {{!-- TODO: create a toggle showForm function in component --}}
-      <CommentForm @comment={{comment}} />
+      {{comment-form comment=comment}}
     {{/if}}
     <div class="post-comment__child-comments">
       {{#each comment.comments as |childComment|}}
-        <PostComment @comment={{childComment}} />
+        {{post-comment comment=childComment}}
       {{/each}}
     </div>
   {{/if}}
