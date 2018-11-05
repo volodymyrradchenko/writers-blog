@@ -1,30 +1,40 @@
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
 import { get, set } from '@ember/object';
+import { task } from 'ember-concurrency';
+import { PropTypes } from 'ember-prop-types';
 
 export default Component.extend({
+  propTypes: {
+    commentMessage: PropTypes.string,
+    showForm: PropTypes.bool
+  },
+
   store: service(),
   session: service(),
 
   tagName: '',
 
-  async saveComment(commentMessage = '') {
-    let newComment = this.store.createRecord('comment', {
+  saveComment: task(function * (commentMessage = {}) {
+    try {
+
+    let newComment = get(this, 'store').createRecord('comment', {
       uid: get(this, 'session.currentUser.uid'),
-      body: commentMessage
-    });
+      body: commentMessage,
+    })
 
     let currentParent = this.comment;
+
     get(currentParent, 'comments').pushObject(newComment);
 
-    try {
-      await newComment.save();
-      await currentParent.save();
-
-      set(this, 'showForm', false);
-      set(this, 'commentMessage', '')
-    } catch (e) {
-      console.log(e)
-    }
+    yield newComment.save();
+    yield currentParent.save();
+  } catch (err) {
+    console.log(err)
+  } finally {
+    set(this, 'commentMessage', '');
+    // TODO: make a wrapper component instead of passing showForm to post-comment component
+    set(this, 'showForm', false);
   }
+  }),
 });

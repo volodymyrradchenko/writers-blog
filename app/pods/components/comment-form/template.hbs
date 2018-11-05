@@ -1,4 +1,4 @@
-<form class="reply-form" {{action saveComment commentMessage on="submit"}}>
+<form class="reply-form" {{action (perform saveComment commentMessage) on="submit"}}>
   <div class="reply-form__text-input">
     {{textarea type="text" value=commentMessage placeholder="Leave your comment here..."}}
   </div>

@@ -1,0 +1,20 @@
+<article class="post__item">
+  <div class="post__header">
+    <div class="post__category visually-hidden">{{model.category}}</div>
+    <h3 class="post__title">{{model.title}}</h3>
+    <div class="post__info">
+      <span class="post__date">
+        <time datetime={{this.dateTime}}>{{this.dateTimeShow}}</time>
+      </span>
+      <span class="post__divider"></span>
+      <span class="post__duration">{{this.readingTime}}</span>
+    </div>
+  </div>
+  <figure class="post__image">
+    <img src={{model.imgUrl}} alt={{model.imgAlt}}>
+    <figcaption class="post__image-caption">{{model.imgCapt}}</figcaption>
+  </figure>
+  <div class="post__body">
+    {{{model.body}}}
+  </div>
+</article>

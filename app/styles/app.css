@@ -51,14 +51,6 @@ a {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas: "header" "nav" "main" "footer";
-
-}
-
-@media (min-width: 768px) {
-  .ember-application {
-    grid-template-columns: 130px 1fr;
-    grid-template-areas: "header nav" "main main" "footer footer";
-  }
 }
 
 /* Header */
@@ -152,6 +144,9 @@ a {
 .post-card__wrapper {
   margin: 0 auto;
   padding: 0;
+
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
 }
 
 .post-card__content {
@@ -171,6 +166,7 @@ a {
   background-color: #ffffff;
   border-bottom: 1px solid rgba(142, 142, 142, 0.2);
 
+  width: 100%;
   margin: 12px auto;
 }
 
@@ -179,8 +175,9 @@ a {
 }
 
 .post-card__item img {
-  width: 100vw;
-
+  width: 100%;
+  height: 275px;
+  object-fit: cover;
   padding: 0 auto;
   margin: 0;
 }

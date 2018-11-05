@@ -11,7 +11,7 @@
       <button class="post-comment__inline-button" type="button" name="button" {{action toggleForm}}><span class="inline-button__divider"></span>Reply</button>
     </div>
     {{#if showForm}}
-      {{comment-form comment=comment}}
+      {{comment-form comment=comment showForm=showForm}}
     {{/if}}
     <div class="post-comment__child-comments">
       {{#each comment.comments as |childComment|}}
