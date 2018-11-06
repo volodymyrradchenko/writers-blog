@@ -321,6 +321,7 @@ margin: 0;
 .post-comment__inline-button {
   display: inline-block;
   border: none;
+  outline: none;
   background: transparent;
   cursor: pointer;
   padding: 0;
@@ -334,6 +335,13 @@ margin: 0;
 
 .post-comment__inline-button:hover {
   text-decoration: underline;
+}
+/* TODO: fix outline active in firefox */
+.post-comment__inline-button:hover,
+.post-comment__inline-button:active,
+.post-comment__inline-button:focus {
+  outline: 0;
+  border: 0;
 }
 
 .inline-button__divider::before {

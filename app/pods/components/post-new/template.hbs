@@ -1,0 +1,24 @@
+<form {{action (perform createPost title body imgUrl imgAlt imgCaption category) on='submit'}}>
+  <div>
+    {{input type="text" value=title placeholder='Title'}}
+  </div>
+  <div>
+    {{pell-editor value=body onChange=(action (mut body))}}
+    {{textarea type="text" value=body placeholder='Body'}}
+  </div>
+  <div>
+    {{input type="text" value=imgUrl placeholder='Image URL'}}
+  </div>
+  <div>
+    {{input type="text" value=imgAlt placeholder='Image alt'}}
+  </div>
+  <div>
+    {{input type="text" value=imgCaption placeholder='Image caption'}}
+  </div>
+  <div>
+    {{input type="text" value=category placeholder='Category'}}
+  </div>
+  <div>
+    <button class="button" type="submit">Save new post</button>
+  </div>
+</form>
