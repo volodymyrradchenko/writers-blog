@@ -6,10 +6,18 @@ export default Component.extend({
   classNames: ['post-card__item', 'infinite-scroll__item'],
   // TODO add dateTime, dateTimeShow and readingTime calculations
   dateTime: computed(function() {
-    return this.model.get('timestamp');
+    let timestamp = this.model.get('timestamp');
+    if (timestamp) {
+      return this.model.get('timestamp');
+    }
+    return;
   }),
   dateTimeShow: computed(function() {
-    return this.model.get('timestamp').toLocaleTimeString();
+    let timestamp = this.model.get('timestamp');
+    if (timestamp) {
+      return this.model.get('timestamp').toLocaleTimeString();
+    }
+    return;
   }),
   readingTime: '7 minutes read'
 });

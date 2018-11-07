@@ -1,23 +1,17 @@
 # writers-blog
+# WIP
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
-
-## Prerequisites
-
-You will need the following things properly installed on your computer.
-
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/)
-* [Yarn](https://yarnpkg.com/)
-* [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
+This is blog application written with EmberJS and Firebase.
+Live demo [writers-blog-test.firebaseapp.com](https://writers-blog-test.firebaseapp.com/)
 
 ## Installation
 
 * `git clone <repository-url>` this repository
 * `cd writers-blog`
 * `yarn install`
+* create new free [Firebase](https://console.firebase.google.com/) project
+* create `.env` file in the the root directory and add `FIREBASE_KEY=YourFirebaseApiKey` line
+* edit `environment.js`'s firebase settings
 
 ## Running / Development
 
