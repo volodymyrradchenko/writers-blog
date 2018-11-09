@@ -14,4 +14,5 @@ export default DS.Model.extend({
   }),
   uid: DS.attr('string'),
   comments: DS.hasMany('comment', { async: true, inverse: null }),
+  user: DS.belongsTo('user', { async: true, inverse: null }),
 });

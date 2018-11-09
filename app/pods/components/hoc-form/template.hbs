@@ -1,0 +1,7 @@
+<form class='hoc-form {{formClass}}' {{action onFormSubmit on='submit'}}>
+  {{yield (hash
+    fields=(component 'hoc-form/fields')
+    buttons=(component 'hoc-form/buttons')
+  )
+}}
+</form>

@@ -27,8 +27,8 @@ export default task({
 
       yield newComment.save();
       yield currentParent.save();
-    } catch (err) {
-      console.log(get(err, 'message'));
+    } catch (error) {
+      set(this, 'error', 'Password does not match the confirm password.')
     } finally {
       set(this, 'commentMessage', '');
       // TODO: make a wrapper component instead of passing showForm to post-comment component

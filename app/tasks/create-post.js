@@ -1,12 +1,19 @@
 import { inject as service } from '@ember/service';
-import { get } from '@ember/object';
+import { get, set } from '@ember/object';
 import { task } from 'ember-concurrency';
 
 export default task({
   store: service(),
   session: service(),
 
-  *perform(title, body, imgUrl, imgAlt, imgCaption, category) {
+  *perform(
+      title = '',
+      body = '',
+      imgUrl = '',
+      imgAlt = '',
+      imgCaption = '',
+      category = ''
+    ) {
     try {
 
       let newPost = get(this, 'store').createRecord('post', {
@@ -20,8 +27,8 @@ export default task({
       });
 
       yield newPost.save();
-    } catch (err) {
-      console.log(get(err, 'message'));
+    } catch (error) {
+      set(this, 'error', 'Error: create-post task');
     }
   }
 })

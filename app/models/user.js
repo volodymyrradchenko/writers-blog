@@ -1,9 +1,9 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  body: DS.attr('string'),
   uid: DS.attr('string'),
-  post: DS.belongsTo('post', { async: true, inverse: null }),
+  name: DS.attr('string'),
+  email: DS.attr('string'),
   comments: DS.hasMany('comment', { async: true, inverse: null }),
-  user: DS.belongsTo('user', { async: true, inverse: null }),
+  posts: DS.hasMany('post', { async: true, inverse: null })
 });
