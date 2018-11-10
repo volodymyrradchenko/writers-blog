@@ -1,6 +1,6 @@
 {{#hoc-form formClass='reg-form' onFormSubmit=(perform registerUser name email password confirmPassword) as |form|}}
 
-  {{#form.fields  fieldClass='reg-form__field-wrapper' as |field|}}
+  {{#form.fields  fieldsClass='reg-form__field-wrapper' as |field|}}
     {{field.input name 'Name' 'Your name' inputClass='reg-form__input'}}
     {{field.input email 'Email' 'Some description' inputClass='reg-form__input'}}
     {{field.input password 'Password' 'Password' type='password' inputClass='reg-form__input'}}

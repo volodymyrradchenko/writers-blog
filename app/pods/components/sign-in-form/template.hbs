@@ -1,0 +1,30 @@
+{{#if session.isAuthenticated}}
+  Logged in as  {{session.currentUser.email}} {{session.currentUser.displayName}}
+  <button class="auth-as-twitter" {{action (perform signOut)}}>Sign out</button>
+{{else}}
+  {{#hoc-form formClass='sign-in-form' onFormSubmit=(perform signIn provider email password) as |form|}}
+
+    {{#form.fields fieldsClass='sign-in-form__field-wrapper' as |field|}}
+      {{field.input email 'Email' 'Your email' type='email' inputClass='sign-in-form__input'}}
+      {{field.input password 'Password' 'Your password' type='password' inputClass='sign-in-form__input'}}
+    {{/form.fields}}
+
+    {{#form.buttons buttonsClass='sign-in-form__button-wrapper' as |button|}}
+      {{button.button 'reset' 'Cancel' buttonClass='sign-in-form__button--reset'}}
+      {{button.button 'submit' 'Submit' buttonClass='sign-in-form__button--submit'}}
+    {{/form.buttons}}
+
+    {{#form.socials socialsClass='sign-in-form__social-wrapper' as |social|}}
+      {{social.button 'button' 'Sign in with Google'
+                      buttonClass='sign-in-form__social-button'
+                      click=(action (perform signIn 'google'))}}
+      {{social.button 'button' 'Sign in with Twitter'
+                      buttonClass='sign-in-form__social-button'
+                      click=(action (perform signIn 'twitter'))}}
+      {{social.button 'button' 'Sign in with Facebook'
+                      buttonClass='sign-in-form__social-button'
+                      click=(action (perform signIn 'facebook'))}}
+    {{/form.socials}}
+
+  {{/hoc-form}}
+{{/if}}
