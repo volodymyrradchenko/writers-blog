@@ -1,6 +1,12 @@
 import Component from '@ember/component';
+import PropTypeMixin, { PropTypes } from 'ember-prop-types';
 
-let Button = Component.extend({
+let Button = Component.extend(PropTypeMixin, {
+  propTypes: {
+    type: PropTypes.string,
+    value: PropTypes.string,
+    buttonClass: PropTypes.string.isRequired,
+  },
     tagName: 'input',
     classNames: ['hoc-form__button'],
     classNameBindings: ['buttonClass'],
@@ -9,5 +15,5 @@ let Button = Component.extend({
 });
 
 export default Button.reopenClass({
-    positionalParams: ['type', 'value']
+    positionalParams: ['type', 'value', 'buttonClass']
 })

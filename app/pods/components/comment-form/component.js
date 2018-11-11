@@ -1,21 +1,23 @@
 import Component from '@ember/component';
-// import { saveComment } from 'writers-blog/tasks';
 import { PropTypes } from 'ember-prop-types';
-
 import { inject as service } from '@ember/service';
 import { get, set } from '@ember/object';
 import { task } from 'ember-concurrency';
+// import { saveComment } from 'writers-blog/tasks';
 
 export default Component.extend({
   propTypes: {
     commentMessage: PropTypes.string,
-    showForm: PropTypes.bool
+    showForm: PropTypes.bool,
+    saveComment: PropTypes.EmberObject.isRequired,
+    comment: PropTypes.EmberObject.isRequired
   },
   store: service(),
   session: service(),
 
-  tagName: '',
+  classNames: 'comment-form__wrapper',
 
+// TODO: find a way to move saveComment to the 'tasks' folder
   saveComment: task(function * (commentMessage = '') {
       try {
 
@@ -23,7 +25,6 @@ export default Component.extend({
           uid: get(this, 'session.currentUser.uid'),
           body: commentMessage,
         });
-
 
         let currentParent = get(this, 'comment');
 

@@ -1,18 +1,24 @@
 {{#hoc-form formClass='post-form' onFormSubmit=(perform createPost title body imgUrl imgAlt imgCaption category) as |form|}}
 
-  {{#form.fields  fieldClass='post-form__field-wrapper' as |field|}}
-    {{field.input title 'Title:' 'Title' inputClass='post-form__input'}}
+  {{#form.fields  fieldsClass='post-form__field-wrapper' as |field|}}
+    {{field.input title 'Title:' 'Title' 'post-form__input'
+                  type='text'}}
     {{pell-editor value=body onChange=(action (mut body))}}
-    {{field.input body 'Body:' 'Body' inputClass='post-form__input'}}
-    {{field.input imgUrl 'Image URL' 'URL' inputClass='post-form__input'}}
-    {{field.input imgAlt 'Image alt' 'URL alt' inputClass='post-form__input'}}
-    {{field.input imgCaption 'Image caption' 'Caption' inputClass='post-form__input'}}
-    {{field.input category 'Category' 'Category' inputClass='post-form__input'}}
+    {{field.input body 'Body:' 'Body' 'post-form__input'
+                  type='text'}}
+    {{field.input imgUrl 'Image URL' 'URL' 'post-form__input'
+                  type='url'}}
+    {{field.input imgAlt 'Image alt' 'URL alt' 'post-form__input'
+                  type='text'}}
+    {{field.input imgCaption 'Image caption' 'Caption' 'post-form__input'
+                  type='text'}}
+    {{field.input category 'Category' 'Category' 'post-form__input'
+                  type='text'}}
   {{/form.fields}}
 
   {{#form.buttons buttonsClass='post-form__button-wrapper' as |button|}}
-    {{button.button 'reset' 'Cancel' buttonClass='post-form__button--reset'}}
-    {{button.button 'submit' 'Submit' buttonClass='post-form__button--submit'}}
+    {{button.button 'reset' 'Cancel' 'post-form__button--reset'}}
+    {{button.button 'submit' 'Submit' 'post-form__button--submit'}}
   {{/form.buttons}}
 
   {{#if error}}

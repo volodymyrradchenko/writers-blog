@@ -1,8 +1,12 @@
-<form class="reply-form" {{action (perform saveComment commentMessage) on="submit"}}>
-  <div class="reply-form__text-input">
-    {{textarea type="text" value=commentMessage placeholder="Leave your comment here..."}}
-  </div>
-  <div class="reply-form__buttons">
-    <button type="submit" name="button">Reply</button>
-  </div>
-</form>
+{{#hoc-form formClass='comment-form' onFormSubmit=(perform saveComment commentMessage) as |form|}}
+
+  {{#form.fields fieldsClass='comment-form__field-wrapper' as |field|}}
+    {{field.textarea commentMessage 'Leave your comment here...' 'comment-form__textarea'}}
+  {{/form.fields}}
+
+  {{#form.buttons buttonsClass='comment-form__button-wrapper' as |button|}}
+    {{button.button 'reset' 'Cancel' 'sign-in-form__button--reset'}}
+    {{button.button 'submit' 'Submit' 'sign-in-form__button--submit'}}
+  {{/form.buttons}}
+
+{{/hoc-form}}

@@ -313,7 +313,7 @@ margin: 0;
 .post-comment__body {
 }
 
-.reply-form__wrapper {
+.comment-form__wrapper {
   margin: 24px 30px;
   background-color: #ffffff;
 }
@@ -369,16 +369,16 @@ margin: 0;
 
 /* comment-form component */
 
-.reply-form {
+.comment-form {
   border: 1px solid #8e8e8e;
   border-radius: 5px;
 }
 
-.reply-form__text-input {
+.comment-form__field-wrapper {
 margin: 8px;
 }
 
-.reply-form__text-input textarea {
+.comment-form__textarea {
 width: 100%;
 min-height: 122px;
 margin: 0;

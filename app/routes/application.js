@@ -6,7 +6,7 @@ export default Route.extend({
   session: service(),
 
   beforeModel() {
-    return this.get('session').fetch().catch((err) => debug('---oops===>   ' + err));
+    return this.get('session').fetch().catch((err) => debug('---application' + err));
   }
 
 });

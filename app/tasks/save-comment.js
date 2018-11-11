@@ -1,14 +1,8 @@
 import { inject as service } from '@ember/service';
 import { get, set } from '@ember/object';
 import { task } from 'ember-concurrency';
-import { PropTypes } from 'ember-prop-types';
 
 export default task({
-  propTypes: {
-    commentMessage: PropTypes.string,
-    showForm: PropTypes.bool
-  },
-
   store: service(),
   session: service(),
 

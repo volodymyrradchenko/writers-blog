@@ -1,15 +1,19 @@
 {{#hoc-form formClass='reg-form' onFormSubmit=(perform registerUser name email password confirmPassword) as |form|}}
 
   {{#form.fields  fieldsClass='reg-form__field-wrapper' as |field|}}
-    {{field.input name 'Name' 'Your name' inputClass='reg-form__input'}}
-    {{field.input email 'Email' 'Some description' inputClass='reg-form__input'}}
-    {{field.input password 'Password' 'Password' type='password' inputClass='reg-form__input'}}
-    {{field.input confirmPassword 'Password' 'Repeat password' type='password' inputClass='reg-form__input'}}
+    {{field.input name 'Name' 'Your name' 'reg-form__input'
+                  type='text'}}
+    {{field.input email 'Email' 'Some description' 'reg-form__input' 
+                  type='email'}}
+    {{field.input password 'Password' 'Password' 'reg-form__input'
+                  type='password'}}
+    {{field.input confirmPassword 'Password' 'Repeat password' 'reg-form__input'
+                  type='password'}}
   {{/form.fields}}
 
   {{#form.buttons buttonsClass='reg-form__button-wrapper' as |button|}}
-    {{button.button 'reset' 'Cancel' buttonClass='reg-form__button--reset'}}
-    {{button.button 'submit' 'Submit' buttonClass='reg-form__button--submit'}}
+    {{button.button 'reset' 'Cancel' 'reg-form__button--reset'}}
+    {{button.button 'submit' 'Submit' 'reg-form__button--submit'}}
   {{/form.buttons}}
 
   {{#if error}}

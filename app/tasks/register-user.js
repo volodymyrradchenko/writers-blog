@@ -1,15 +1,10 @@
 import { inject as service } from '@ember/service';
 import { get, set, computed } from '@ember/object';
 import { task } from 'ember-concurrency';
-// import { PropTypes } from 'ember-prop-types';
 
 export default task({
-  // propTypes: {
-  // },
-
   store: service(),
   session: service(),
-  router: service(),
   firebaseApp: service(),
 
   *perform(
