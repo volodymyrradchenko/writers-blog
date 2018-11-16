@@ -15,13 +15,13 @@ export default task({
   ) {
     try {
 
-      let isValid = computed(function () {
+      let isPasswordValid = computed(function () {
         return password === confirmPassword;
       })
 
       let authenticate = get(this, 'firebaseApp').auth();
 
-      if (isValid) {
+      if (isPasswordValid) {
         yield authenticate.createUserWithEmailAndPassword(email, password)
           .then((response) => {
             get(this, 'store').createRecord('user', {

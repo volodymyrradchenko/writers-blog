@@ -1,5 +1,7 @@
 import Component from '@ember/component';
 import { computed } from '@ember/object';
+import { task } from 'ember-concurrency';
+import { debug } from '@ember/debug';
 
 export default Component.extend({
   tagName: 'article',
@@ -19,5 +21,13 @@ export default Component.extend({
     }
     return;
   }),
-  readingTime: '7 minutes read'
+  readingTime: '7 minutes read',
+  // TODO: move deletePost to tasks folder
+  deletePost: task(function*(post){
+    try {
+      yield post.destroyRecord();
+    } catch (error) {
+      debug('---post-card', error);
+    }
+  })
 });

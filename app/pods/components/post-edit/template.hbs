@@ -1,0 +1,28 @@
+{{#hoc-form formClass='edit-form' onFormSubmit=(perform updatePost) as |form|}}
+
+  {{#form.fields  fieldsClass='edit-form__field-wrapper' as |field|}}
+    {{field.input model.title 'Title:' 'Title' 'edit-form__input'
+                  type='text'}}
+    {{pell-editor value=model.body onChange=(action (mut model.body))}}
+    {{field.input model.body 'Body:' 'Body' 'edit-form__input'
+                  type='text'}}
+    {{field.input model.imgUrl 'Image URL' 'URL' 'edit-form__input'
+                  type='url'}}
+    {{field.input model.imgAlt 'Image alt' 'URL alt' 'edit-form__input'
+                  type='text'}}
+    {{field.input model.imgCaption 'Image caption' 'Caption' 'edit-form__input'
+                  type='text'}}
+    {{field.input model.category 'Category' 'Category' 'edit-form__input'
+                  type='text'}}
+  {{/form.fields}}
+
+  {{#form.buttons buttonsClass='edit-form__button-wrapper' as |button|}}
+    {{button.button 'reset' 'Cancel' 'edit-form__button--reset'}}
+    {{button.button 'submit' 'Save changes' 'edit-form__button--submit'}}
+  {{/form.buttons}}
+
+  {{#if error}}
+    <p class='error-comunicat'>Error: {{error}}</p>
+  {{/if}}
+
+{{/hoc-form}}
