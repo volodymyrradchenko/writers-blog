@@ -1,6 +1,7 @@
 <section class="post__comments">
   <h1 class="visually-hidden">Comments list</h1>
   <div class="post-comment__wrapper">
+    {{comment-form comment=model}}
     {{#if model.comments}}
       {{#each model.comments as |comment|}}
         {{post-comment comment=comment showReply=true }}
@@ -9,5 +10,4 @@
       <h2>No comments yet</h2>
     {{/if}}
   </div>
-  {{comment-form comment=model}}
 </section>

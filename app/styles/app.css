@@ -213,7 +213,7 @@ a {
   content: '\007c';
 }
 
-.button {
+.infinite-scroll__button {
   font: inherit;
   text-align: center;
   color: #ffffff;
@@ -223,21 +223,19 @@ a {
 
   background-color: #000000;
   border: none;
-}
 
-.button:hover,
-.button:active,
-.button:focus {
-  background-color: #333333;
-}
-
-.post-card__button button {
   display: block;
 
   padding: 10px 30px;
   margin: 24px auto;
 
   letter-spacing: 4px;
+}
+
+.infinite-scroll__button:hover,
+.infinite-scroll__button:active,
+.infinite-scroll__button:focus {
+  background-color: #333333;
 }
 
 /*Post view*/

@@ -2,10 +2,14 @@ import Component from '@ember/component';
 import { computed } from '@ember/object';
 import { task } from 'ember-concurrency';
 import { debug } from '@ember/debug';
+import { inject as service } from '@ember/service';
 
 export default Component.extend({
   tagName: 'article',
   classNames: ['post-card__item', 'infinite-scroll__item'],
+
+  session: service(),
+
   // TODO add dateTime, dateTimeShow and readingTime calculations
   dateTime: computed(function() {
     let timestamp = this.model.get('timestamp');

@@ -15,5 +15,8 @@
     </div>
   </div>
 {{/link-to}}
-{{#link-to 'posts.edit' model.id}}Edit post{{/link-to}}
-<button {{action (perform deletePost model)}}>Delete</button>
+{{!-- TODO: allow edit/delete/create only for admin --}}
+{{#if session.currentUser}}
+  {{#link-to 'posts.edit' model.id class='button' tagName='button'}}Edit post{{/link-to}}
+  <button {{action (perform deletePost model)}}>Delete</button>
+{{/if}}
