@@ -8,10 +8,10 @@
     <h3 class="post-card__title">{{model.title}}</h3>
     <div class="post-card__footer">
       <span class="post-card__date">
-        <time datetime={{this.dateTime}}>{{this.dateTimeShow}}</time>
+        <time datetime={{model.timestamp}}>{{moment-from-now model.timestamp}}</time>
       </span>
       <span class="post-card__divider"></span>
-      <span class="post-card__duration">{{this.readingTime}}</span>
+      <span class="post-card__duration">{{model.readingTime}} min read</span>
     </div>
   </div>
 {{/link-to}}
