@@ -4,10 +4,10 @@
     <h3 class="post__title">{{model.title}}</h3>
     <div class="post__info">
       <span class="post__date">
-        <time datetime={{this.dateTime}}>{{this.dateTimeShow}}</time>
+        <time datetime={{model.timestamp}}>{{moment-from-now model.timestamp}}</time>
       </span>
       <span class="post__divider"></span>
-      <span class="post__duration">{{this.readingTime}}</span>
+      <span class="post__duration">{{model.readingTime}} min read</span>
     </div>
   </div>
   <figure class="post__image">

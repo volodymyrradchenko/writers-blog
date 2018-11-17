@@ -3,12 +3,15 @@ import { PropTypes } from 'ember-prop-types';
 import { inject as service } from '@ember/service';
 import { get, set } from '@ember/object';
 import { task } from 'ember-concurrency';
+import firebase from 'firebase';
 // import { saveComment } from 'writers-blog/tasks';
 
 export default Component.extend({
   propTypes: {
     commentMessage: PropTypes.string,
     showForm: PropTypes.bool,
+    email: PropTypes.string,
+    timestamp: PropTypes.date,
     saveComment: PropTypes.EmberObject.isRequired,
     comment: PropTypes.EmberObject.isRequired
   },
@@ -20,9 +23,14 @@ export default Component.extend({
 // TODO: find a way to move saveComment to the 'tasks' folder
   saveComment: task(function * (commentMessage = '') {
       try {
+        
+        let timestamp = yield firebase.database.ServerValue.TIMESTAMP;
 
         let newComment = get(this, 'store').createRecord('comment', {
           uid: get(this, 'session.currentUser.uid'),
+          name: get(this, 'session.currentUser.displayName'),
+          email: get(this, 'session.currentUser.email'),
+          timestamp: timestamp,
           body: commentMessage,
         });
 

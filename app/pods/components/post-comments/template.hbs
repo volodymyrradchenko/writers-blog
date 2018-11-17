@@ -1,7 +1,11 @@
 <section class="post__comments">
   <h1 class="visually-hidden">Comments list</h1>
   <div class="post-comment__wrapper">
-    {{comment-form comment=model}}
+    {{#if session.currentUser}}
+      {{comment-form comment=model}}
+    {{else}}
+      <p>{{#link-to 'sign-in'}}Sign in{{/link-to}} in order to leave comments.</p>
+    {{/if}}
     {{#if model.comments}}
       {{#each model.comments as |comment|}}
         {{post-comment comment=comment showReply=true }}

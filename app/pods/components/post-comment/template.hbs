@@ -1,7 +1,9 @@
 <article class="post-comment__item">
   <div class="post-comment__info">
-    <a href="#">Username</a>
-    <span>1 day ago</span>
+    {{!-- TODO: add a link to comment owner's profile --}}
+    <a href="#">{{if comment.name comment.name comment.email}}</a>
+    <span>{{moment-from-now comment.timestamp}}</span>
+    {{!-- TODO: comment.timestamp is showing 17 hours ago every time new comment is added --}}
   </div>
   <div class="post-comment__body">
     {{comment.body}}
@@ -11,7 +13,11 @@
       <button class="post-comment__inline-button" type="button" name="button" {{action toggleForm}}><span class="inline-button__divider"></span>Reply</button>
     </div>
     {{#if showForm}}
-      {{comment-form comment=comment showForm=showForm}}
+      {{#if session.currentUser}}
+        {{comment-form comment=comment showForm=showForm}}
+      {{else}}
+        <p>{{#link-to 'sign-in'}}Sign in{{/link-to}} in order to leave comments.</p>
+      {{/if}}
     {{/if}}
     <div class="post-comment__child-comments">
       {{#each comment.comments as |childComment|}}
