@@ -1,0 +1,10 @@
+{{yield (hash
+    button=(component 'infinite-scroll/button'
+      loadMore=(action paginate)
+      isRunning=isRunning
+    )
+    models=models
+    isRunning=isRunning
+    isLoadedAll=isLoadedAll
+  )
+}}

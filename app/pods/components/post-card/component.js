@@ -5,7 +5,7 @@ import { inject as service } from '@ember/service';
 
 export default Component.extend({
   tagName: 'article',
-  classNames: ['post-card__item', 'infinite-scroll__item'],
+  classNames: ['post-card__item'],
 
   session: service(),
 

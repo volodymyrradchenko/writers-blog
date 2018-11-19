@@ -1,9 +1,11 @@
 <h2 class="visually-hidden">Posts list</h2>
-<div class="post-card__wrapper infinite-scroll">
-  {{#each model as |post|}}
-    {{post-card model=post }}
+
+{{#infinite-scroll classNames='post-card__wrapper' modelName='post' modelsToShow=2 modelsPerLoad=1 as |scroll|}}
+  {{#each scroll.models as |post|}}
+    {{post-card classNames='infinite-scroll__item' model=post}}
   {{/each}}
-</div>
-<div class="post-card__button">
-  <button class="button infinite-scroll__button">More</button>
-</div>
+  {{#if scroll.isLoadedAll}}
+    <h1>No more posts to show!</h1>
+  {{/if}}
+  {{scroll.button classNames='post-card__button'}}
+{{/infinite-scroll}}

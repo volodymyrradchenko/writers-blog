@@ -1,7 +1,7 @@
 {{#link-to 'posts.post' model.id}}
   <figure class="post-card__image">
     <img src={{model.imgUrl}} alt={{model.imgAlt}}>
-    <figcaption class="visually-hidden">{{model.imgCapt}}</figcaption>
+    <figcaption class="visually-hidden"><h2>{{model.imgCaption}}</h2></figcaption>
   </figure>
   <div class="post-card__content">
     <div class="post-card__category visually-hidden">{{model.category}}</div>

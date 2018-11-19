@@ -27,7 +27,6 @@
 }
 
 /* Page */
-
 html, body {
   padding: 0;
   margin: 0;
@@ -38,7 +37,6 @@ html {
   font-size: 18px;
   font-weight: 400;
   color: #000000;
-
   background-color: #F6F5F3;
 }
 
@@ -50,19 +48,16 @@ a {
 .ember-application {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-areas: "header" "nav" "main" "footer";
+  grid-template-areas: "header""nav""main""footer";
 }
 
 /* Header */
-
 .page-header {
   grid-area: header;
   padding: 5px 20px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   height: auto;
   background-color: #ffffff;
 }
@@ -82,18 +77,14 @@ a {
 }
 
 /* Navigation */
-
 .main-nav {
   grid-area: nav;
-
   position: sticky;
   top: 0;
-
   font-size: 18px;
   line-height: 22px;
   color: #000000;
   text-transform: uppercase;
-
   background-color: #ffffff;
 }
 
@@ -102,17 +93,14 @@ a {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-
   margin: 0 auto;
   padding: 0 0;
   border-bottom: 1px solid rgba(142, 142, 142, 0.2);
-
 }
 
 .site-list__item a {
   display: block;
   background-color: #ffffff;
-
   padding: 3px 10px;
   border-bottom: 2px solid transparent;
 }
@@ -132,18 +120,14 @@ a {
 }
 
 /* Content */
-
 .page-main {
   grid-area: main;
   box-sizing: border-box;
-
   margin: 0 auto;
   padding: 0;
 }
 
-@media (min-width 767px) {
-
-}
+@media (min-width 767px) {}
 
 .posts {
   max-width: 600px;
@@ -160,9 +144,7 @@ a {
 
 .post-card__title {
   font-size: 24px;
-
   text-align: left;
-
   padding: 0;
   margin: 0 0 10px 0;
 }
@@ -170,16 +152,14 @@ a {
 .post-card__item {
   background-color: #ffffff;
   border-bottom: 1px solid rgba(142, 142, 142, 0.2);
-
   width: 100%;
   margin: 12px auto;
-
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
 .post-card__item:hover {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .post-card__item figure {
@@ -201,7 +181,6 @@ a {
 .post-card__footer {
   font-family: Arial, sans-serif;
   font-size: 90%;
-
   color: #8e8e8e;
 }
 
@@ -220,15 +199,11 @@ a {
   vertical-align: middle;
   text-transform: uppercase;
   font-weight: bold;
-
   background-color: #000000;
   border: none;
-
   display: block;
-
   padding: 10px 30px;
   margin: 24px auto;
-
   letter-spacing: 4px;
 }
 
@@ -239,7 +214,6 @@ a {
 }
 
 /*Post view*/
-
 .post__header {
   padding: 12px 20px;
 }
@@ -247,29 +221,25 @@ a {
 .post__item {
   background-color: #ffffff;
   border-bottom: 1px solid rgba(142, 142, 142, 0.2);
-
   margin: 12px auto;
+  max-width: 800px;
 }
 
 .post__title {
   font-size: 24px;
-
   text-align: left;
-
   padding: 0;
   margin: 0;
 }
 
-
 .post__info {
-font-family: Arial, sans-serif;
-font-weight: bold;
-
-color: #8e8e8e;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: #8e8e8e;
 }
 
 .post__info time {
-text-transform: none;
+  text-transform: none;
 }
 
 .post__divider::after {
@@ -277,25 +247,24 @@ text-transform: none;
 }
 
 .post__image {
-margin: 0 auto;
+  margin: 0 auto;
 }
 
 .post__image img {
-width: 100vw;
-
-padding: 0 auto;
-margin: 0;
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  padding: 0 auto;
+  margin: 0;
 }
 
 .post__body {
   padding: 0 20px;
   margin: 20px 0;
-
   color: #000000;
   text-align: left;
   text-indent: 0;
   text-rendering: optimizeLegibility;
-
   line-height: 28px;
 }
 
@@ -305,7 +274,6 @@ margin: 0;
 
 
 /* post comments */
-
 .post-comment__wrapper {
   margin: 0 auto;
   padding: 0;
@@ -316,12 +284,10 @@ margin: 0;
   border-bottom: 1px solid rgba(142, 142, 142, 0.2);
   padding: 12px 20px;
   padding-left: 30px;
-
   margin: 12px auto;
 }
 
-.post-comment__body {
-}
+.post-comment__body {}
 
 .comment-form__wrapper {
   margin: 24px 30px;
@@ -337,15 +303,14 @@ margin: 0;
   padding: 0;
   padding-left: 22px;
   font-weight: bold;
-
   position: relative;
-
   color: #8e8e8e;
 }
 
 .post-comment__inline-button:hover {
   text-decoration: underline;
 }
+
 /* TODO: fix outline active in firefox */
 .post-comment__inline-button:hover,
 .post-comment__inline-button:active,
@@ -356,59 +321,49 @@ margin: 0;
 
 .inline-button__divider::before {
   content: '';
-
   display: inline;
   position: absolute;
-
   /* TODO: fix 'top: 0' begaviour: it's different depending on the browser (https://github.com/kimroen/ember-cli-autoprefixer) */
   top: 0;
   right: 38px;
-
   width: 15px;
   height: 15px;
-
   background-image: url("/assets/images/iconmonstr-speech-bubble-17.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
   background-color: transparent;
 }
 
-.post-comment__child-comments {
-
-}
+.post-comment__child-comments {}
 
 /* comment-form component */
-
 .comment-form {
   border: 1px solid #8e8e8e;
   border-radius: 5px;
 }
 
 .comment-form__field-wrapper {
-margin: 8px;
+  margin: 8px;
 }
 
 .comment-form__textarea {
-width: 100%;
-min-height: 122px;
-margin: 0;
-padding: 0;
-overflow: hidden;
-overflow-wrap: break-word;
-outline: none;
-border: none;
-resize: none;
+  width: 100%;
+  min-height: 122px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  outline: none;
+  border: none;
+  resize: none;
 }
 
-
 /* Footer */
-
 .page-footer {
   grid-area: footer;
   padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
-
   background-color: #000000;
 }
 
@@ -416,7 +371,6 @@ resize: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-
   list-style: none;
   padding: 0;
   margin-left: 40px;
@@ -429,7 +383,6 @@ resize: none;
   justify-content: center;
   width: 40px;
   height: 40px;
-
   background-color: #000000;
 }
 
@@ -470,7 +423,8 @@ footer.page-footer address {
 
 .visually-hidden {
   position: absolute !important;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
   padding: 0 !important;
   border: 0 !important;

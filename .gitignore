@@ -31,3 +31,6 @@
 # firebase
 /.firebase/
 .firebase/*
+
+# atom
+.jsbeautifyrc
