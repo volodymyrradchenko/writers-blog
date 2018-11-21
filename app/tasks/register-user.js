@@ -23,17 +23,22 @@ export default task({
 
       if (isPasswordValid) {
         yield authenticate.createUserWithEmailAndPassword(email, password)
-          .then((response) => {
+          .then(response => {
+
+            response.updateProfile({ displayName: name });
+
             get(this, 'store').createRecord('user', {
               uid: get(response, 'uid'),
               name: name,
               email: get(response, 'email'),
             }).save();
+
             get(this, 'session').open('firebase', {
               provider: 'password',
               email: email,
               password: password,
             })
+
           })
       }
     } catch (error) {
