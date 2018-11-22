@@ -1,6 +1,6 @@
 <h2 class="visually-hidden">Posts list</h2>
 
-{{#infinite-scroll classNames='post-card__wrapper' modelName='post' modelsToShow=2 modelsPerLoad=1 as |scroll|}}
+{{#infinite-scroll classNames='post-card__wrapper' modelName='post' modelsToShow=2 modelsPerLoad=4 as |scroll|}}
   {{#each scroll.models as |post|}}
     {{post-card classNames='infinite-scroll__item' model=post}}
   {{/each}}

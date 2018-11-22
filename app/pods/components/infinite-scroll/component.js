@@ -27,10 +27,10 @@ export default Component.extend({
       let limitToFirst = get(this, 'modelsToShow');
       let incrementModels = get(this, 'modelsPerLoad');
 
+      // TODO: add desc filtering by date added
       let options = {
         limitToFirst,
       }
-
 
       let models = get(this, 'models') || '';
 

@@ -145,6 +145,7 @@ a {
 .post-card__title {
   font-size: 24px;
   text-align: left;
+  word-break: break-all;
   padding: 0;
   margin: 0 0 10px 0;
 }
@@ -162,11 +163,11 @@ a {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.post-card__item figure {
+.post-card__image {
   margin: 0 auto;
 }
 
-.post-card__item img {
+.post-card__image img {
   width: 100%;
   height: 275px;
   object-fit: cover;

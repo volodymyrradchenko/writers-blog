@@ -1,8 +1,29 @@
 # writers-blog
-# WIP
+# WIP :hamster:
 
-This is blog application written with EmberJS and Firebase.
+This is a blog application written with Ember.
 Live demo [writers-blog-test.firebaseapp.com](https://writers-blog-test.firebaseapp.com/)
+
+### Things to do
+- [x] infinite-scroll button
+- [ ] comments
+  - [x] styling
+  - [x] user info
+  - [ ] likes
+- [ ] posts
+  - [x] edit and delete functionality
+  - [x] post info
+- [ ] sign-in
+  - [x] with social
+  - [x] with email
+  - [ ] with email link
+- [ ] sign-up
+  - [x] sign-up with email
+  - [ ] add posts and comments for users with verified emails
+- [ ] html/css
+  - [x] mobile view
+  - [ ] responsive
+
 
 ## Installation
 

@@ -37,7 +37,7 @@ export default task({
               provider: 'password',
               email: email,
               password: password,
-            })
+            });
 
           })
       }
