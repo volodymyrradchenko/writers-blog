@@ -18,7 +18,7 @@ export default task({
     category = '',
   ) {
     try {
-      let getReadingTime = function(body) {
+      let getReadingTime = function (body) {
         function count(target) {
           // typecheck for input
           let original = '' + (typeof target === 'string' ? target : 0);
@@ -36,10 +36,21 @@ export default task({
           minutes = words / readingSpeed;
 
         return Math.ceil(minutes);
-      }
+      };
+
+      let getUserKey = function (user_uid) {
+        return new Promise(resolve => {
+          firebase.database().ref('users').orderByChild('uid').equalTo(user_uid).on('value', snapshot => {
+            resolve(Object.keys(snapshot.val())[0]);
+          })
+        })
+      };
 
       let readingTime = yield getReadingTime(body);
+      let currentUserUid = yield get(this, 'session.currentUser.uid');
+      let userKey = yield getUserKey(currentUserUid);
 
+      let parentUser = yield get(this, 'store').findRecord('user', userKey);
 
       let newPost = get(this, 'store').createRecord('post', {
         title: title,
@@ -53,7 +64,10 @@ export default task({
         timestamp: firebase.database.ServerValue.TIMESTAMP,
       });
 
+      yield get(parentUser, 'posts').pushObject(newPost);
       yield newPost.save();
+      yield parentUser.save()
+
     } catch (error) {
       debug('---task-create-post' + error)
       set(this, 'error', 'Error: create-post task');
