@@ -229,6 +229,7 @@ a {
 .post__title {
   font-size: 24px;
   text-align: left;
+  word-break: break-all;
   padding: 0;
   margin: 0;
 }
@@ -257,6 +258,10 @@ a {
   object-fit: cover;
   padding: 0 auto;
   margin: 0;
+}
+
+.post__image-caption {
+  padding: 0 20px;
 }
 
 .post__body {
