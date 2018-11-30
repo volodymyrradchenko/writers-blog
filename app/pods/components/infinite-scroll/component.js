@@ -24,12 +24,12 @@ export default Component.extend({
       yield timeout(500);
       let store = get(this, 'store');
 
-      let limitToFirst = get(this, 'modelsToShow');
+      let limitToLast = get(this, 'modelsToShow');
       let incrementModels = get(this, 'modelsPerLoad');
 
       // TODO: add desc filtering by date added
       let options = {
-        limitToFirst,
+        limitToLast,
       }
 
       let models = get(this, 'models') || '';
@@ -40,12 +40,14 @@ export default Component.extend({
         if (data.length == models.length) {
           set(this, 'isLoadedAll', true);
         } else {
-          set(this, 'models', data);
+          // sort received models by timestamp
+          set(this, 'models', data.sortBy('timestamp').reverse());
         }
-        console.log(get(this, 'isLoadedAll'))
+        debug('--infinite-isLoadedAll' + ' = ' + get(this, 'isLoadedAll'))
       });
       // increment the queery request
-      yield set(this, 'modelsToShow', limitToFirst + incrementModels);
+      yield set(this, 'modelsToShow', limitToLast + incrementModels);
+
       return result;
     } catch (error) {
       debug('---infinite-scroll' + error)
